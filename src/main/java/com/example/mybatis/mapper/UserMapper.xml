@@ -1,0 +1,14 @@
+<mapper namespace="com.example.mybatis.mapper.UserMapper">
+    <select id="findById" resultType="com.example.mybatis.domain.User">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+    <insert id="insertUser" parameterType="com.example.mybatis.domain.User">
+        INSERT INTO users (name, email) VALUES (#{name}, #{email})
+    </insert>
+    <update id="updateUser" parameterType="com.example.mybatis.domain.User">
+        UPDATE users SET name = #{name}, email = #{email} WHERE id = #{id}
+    </update>
+    <delete id="deleteUser" parameterType="long">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+</mapper>
